@@ -20,17 +20,17 @@
         <th>Id</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Salary</th>
+        <th>Salary in Indian Rs</th>
         <th>Joining Date</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="employee in employees">
         <td>{{employee.id}}</td>
-        <td>{{employee.first_name}}</td>
-        <td>{{employee.last_name}}</td>
-        <td>{{employee.salary}}</td>
-        <td>{{employee.date_of_joining}}</td>
+        <td>{{employee.first_name | lowercase}}</td>
+        <td>{{employee.last_name | uppercase}}</td>
+        <td>{{employee.salary | currency:'&#8377;':3}} | {{employee.salary | currency:'&#8360;':0}} | {{employee.salary | currency:'&#36;'}} </td>
+        <td>{{employee.date_of_joining | date:'mediumDate'}} | {{employee.date_of_joining | date:'longDate'}} | {{employee.date_of_joining | date:'short'}}</td>
       </tr>
     </tbody>
   </table>
